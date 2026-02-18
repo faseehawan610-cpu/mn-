@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<title>Muniza ❤️ Forever</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* INTRO OVERLAY */
+#intro {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, #111, #000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 2s ease forwards;
+    animation-delay: 4s;
+}
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+#intro h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+/* MUSIC BUTTON */
+#musicBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    padding: 14px 24px;
+    border-radius: 30px;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    url('https://images.unsplash.com/photo-1517841905240-472988babdf9')
+    center/cover fixed no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* GLASS CARD */
+.card {
+    max-width: 900px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 35px;
+    padding: 50px;
+    box-shadow: 0 50px 120px rgba(0,0,0,0.8);
+    animation: fadeInUp 2s ease;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 { font-size: 3.4rem; }
+h2 { font-size: 1.6rem; opacity: .9; }
+
+.typewriter {
+    font-size: 1.3rem;
+    line-height: 2.3;
+    min-height: 250px;
+}
+
+/* BUTTON */
+button {
+    margin-top: 35px;
+    padding: 14px 36px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* TIMELINE */
+.timeline {
+    padding: 80px 25px;
+    text-align: center;
+    background: radial-gradient(circle,#111,#000);
+}
+.timeline h2 { margin-bottom: 40px; }
+.step {
+    margin: 20px auto;
+    max-width: 600px;
+    font-size: 1.2rem;
+    opacity: .9;
+}
+
+/* FINAL REVEAL */
+.final {
+    text-align: center;
+    padding: 120px 20px;
+}
+.final h1 {
+    font-size: 4.5rem;
+    color: #ffb6c1;
+    animation: glow 3s infinite alternate;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 20px #ff7eb3; }
+    to { text-shadow: 0 0 40px #ffb6c1; }
+}
+
+/* ROSE PETALS */
+.petal {
+    position: fixed;
+    top: -10px;
+    font-size: 22px;
+    animation: fall 10s linear infinite;
+}
+@keyframes fall {
+    to { transform: translateY(120vh) rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+    <h1>Muniza ❤️<br>یہ صرف ویب سائٹ نہیں…<br>یہ محبت ہے</h1>
+</div>
+
+<!-- MUSIC -->
+<audio controls>
+<source src="nastelbom-romantic-436840">
+</audio>
+<button id="musicBtn">🎶 Play Music</button>
+
+<section class="hero">
+    <div class="card">
+        <h1>Happy Anniversary</h1>
+        <h2>میری زندگی — Muniza Fatima ❤️</h2>
+
+        <div id="typewriter" class="typewriter"></div>
+
+        <button onclick="alert('میں تم سے آج بھی وہی محبت کرتا ہوں ❤️')">
+            💍 ہمیشہ کے لیے
+        </button>
+    </div>
+</section>
+
+<section class="timeline">
+    <h2>ہماری کہانی</h2>
+    <div class="step">🌸 پہلی ملاقات</div>
+    <div class="step">💖 پہلی مسکراہٹ</div>
+    <div class="step">💍 نکاح — 20 فروری 2025</div>
+    <div class="step">♾️ ہمیشہ ساتھ</div>
+</section>
+
+<section class="final">
+    <h1>I LOVE YOU</h1>
+    <p>— فصیح</p>
+</section>
+
+<script>
+/* MUSIC BUTTON */
+const music = document.getElementById("music");
+document.getElementById("musicBtn").onclick = () => {
+    music.play();
+};
+
+/* TYPEWRITER */
+const text = `منیزہ،
+
+تم میری زندگی کا وہ خواب ہو
+جو حقیقت بن گیا۔
+
+میں تمہارے ساتھ
+ہر موسم،
+ہر حال،
+ہر لمحہ
+ہمیشہ رہنا چاہتا ہوں۔`;
+
+let i = 0;
+(function type(){
+    if(i < text.length){
+        document.getElementById("typewriter").innerHTML += text.charAt(i++);
+        setTimeout(type,55);
+    }
+})();
+
+/* PETALS */
+setInterval(()=>{
+    const p=document.createElement("div");
+    p.className="petal";
+    p.innerHTML="🌹";
+    p.style.left=Math.random()*100+"vw";
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),10000);
+},500);
+</script>
+
+</body>
+</html>
